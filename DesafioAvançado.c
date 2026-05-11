@@ -1,18 +1,7 @@
 #include <stdio.h>
 int main() {
-    // Variáveis da Carta 1 
-    char estado1;
-    char codigo1[5];
-    char nome1[50];
-    unsigned long int populacao1;
-    float area1, pib1, densidade1, pib_per_capita1, super_poder1;
-    int pontos_turisticos1;
-
-    // Variáveis da Carta 2
-    char estado2, codigo2[5], nome2[50];
-    unsigned long int populacao2;
-    float area2, pib2, densidade2, pib_per_capita2, super_poder2;
-    int pontos_turisticos2;
+    
+    
     // Cadastro Carta1
     printf("--- Cadastro da Carta 1 ---\n");
     printf("Estado: (A-H): ");
