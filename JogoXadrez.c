@@ -1,35 +1,30 @@
 #include <stdio.h>
 
 int main() {
-    // Valores definidos conforme o desafio
-    int movimentoTorre = 5;
-    int movimentoBispo = 5;
-    int movimentoRainha = 8;
+    printf("--- DESAFIO DE XADREZ ---\n\n");
 
-    // 1. TORRE (usando FOR)
+    // Torre
     printf("Movimento da Torre:\n");
-    for (int i = 0; i < movimentoTorre; i++) {
+    for (int i = 0; i < 2; i++) {
         printf("Direita\n");
+        
     }
-    printf("\n");
 
-    // 2. BISPO (usando WHILE)
-    printf("Movimento do Bispo:\n");
+    // Bispo
+    printf("\nMovimento do Bispo:\n");
     int b = 0;
-    while (b < movimentoBispo) {
+    while (b < 2) {
         printf("Cima, Direita\n");
         b++;
     }
-    printf("\n");
 
-    // 3. RAINHA (usando DO-WHILE)
-    printf("Movimento da Rainha:\n");
+    // Rainha
+    printf("\nMovimento da Rainha:\n");
     int r = 0;
     do {
         printf("Esquerda\n");
         r++;
-    } while (r < movimentoRainha);
-    printf("\n");
+    } while (r < 2);
 
     return 0;
 }
