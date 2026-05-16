@@ -5,51 +5,54 @@
  */
 int main() {
     //1.Represente o Tabuleiro: Matriz 10x10 inicializada com 0 (água)
-    int tabuleiro[10][10];
-    int i,j;
+    int matriz[10][10];
+    
 
     //Inicializando o tabuleiro com zeros
-    for (i= 0; i < 10; i++) 
+    for (int linha = 0; linha < 10; linha++) 
     {
-        for ( j = 0; j < 10;j++)
+        for (int coluna = 0; coluna < 10; coluna++)
         {
-            tabuleiro[i][j] = 0;
+            matriz[linha][coluna] = 0;
         }
         
     }
-    // 2. Posicione os Navios
-    //Navio 1: Horizontal (Tamanho 3)
-    //Cordenadas escolhidas: Linha 2, Colunas 3, 4 e 5
-    int navioHorizontal[3] = {3, 3, 3}; // Representação do navio (valor 3)
-    int linhaH = 2, colunaH = 3;
+    // 2. Posicionamento dos Navios (valor 3)
+    //Navio 1: Horizontal (3 unidades)
+    matriz[2][1] = 3;
+    matriz[2][2] = 3;
+    matriz[2][3] = 3;
 
-    for ( j = 0; j < 3; j++)
-    {
-        tabuleiro[linhaH] [colunaH + j] = navioHorizontal[j];
-    }
-    //Navio 2: Veartical (Tamanho 3)
-    //Cordenadas escolhidas: Linha 2, Colunas 5, 6 e 7, Coluna 8;
-    int navioVertical[3] = {3,3,3};
-    int linhaV = 5, colunaV = 8;
+    //Navio 2: Horizontal (3 unidades)
+    matriz[5][8] = 3;
+    matriz[6][8] = 3;
+    matriz[7][8] = 3;
 
-    for ( i = 0; i < 3; i++)
+   
+     //Navio 3: Diagonal Principal (descendo)
+    //Linha e coluna aumentam juntas: (1,1),(2,2), (3,3)...
+    matriz[1][5] = 3;
+    matriz[2][6] = 3;
+    matriz[3][7] = 3;
+
+     //Navio 4: Diagonal Segundária (subindo)
+    //Linha diminui e coluna aumenta: (7,1),(6,2), (5,3)...
+    matriz[7][1] = 3;
+    matriz[6][2] = 3;
+    matriz[5][3] = 3;
+
+    //4. EXIBIÇÃO: Mostrando o tabuleiro no console
+    printf("--- TABULEIRO BATALHA NAVAL(AVENTUREIRO) ---\n\n");
+
+        for ( int linha = 0; linha < 10; linha++)
     {
-        tabuleiro [linhaV + 1] [colunaV] = navioVertical[i];
-    }
-    
-    //3. Exiba o tabuleiro
-    printf("--- TABULEIRO DE BATALHA NAVAL ---\n");
-    for ( i = 0; i < 10;i++)
-    {
-        for ( j = 0; j < 10; j++)
+        for (int coluna = 0; coluna < 10; coluna++)
         {
-            //Imprime o valor seguido de um espaço para melhor visualização
-        printf("%d ",tabuleiro[i][j]);
-        }]
-        
-        // Pula uma linha ao final de cada linha na matriz
+            // Imprime o valor e um espaço para ficar alinhado
+            printf("%d", matriz[linha][coluna]);
+        }
+        // Quando termina uma linha, pula para a de baixo
         printf("\n");
-
     }
     
     return 0;
